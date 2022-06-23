@@ -1,22 +1,106 @@
+/*-----------
+    RESET
+-----------*/
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/*--------------
+    COMMONS
+--------------*/
 .container {
     max-width: 62.5rem;
     margin: 0 auto;
-    padding: 1.25rem;
+    padding: 6.25rem 1.25rem 1.25rem;
 }
 
 body {
     font-family: 'Open Sans', sans-serif;
 }
 
+/*--------------
+    HEADER
+--------------*/
+header {
+    padding: 1.25rem 1.25rem 0;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .9375rem;
+}
+
+.header__logo {
+    display: inline-block;
+    height: 1.5rem;
+    width: 4.625rem;
+    vertical-align: middle;
+}
+
+.header__privacy {
+    color: #5f6368;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.header__user {
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.header__icon {
+    color: #5f6368;
+    cursor: pointer;
+    vertical-align: middle;
+    margin: 1.25rem;
+    font-size: 1.375rem;
+}
+
+.header-bottom ul {
+    display: flex;
+}
+
+.header-bottom ul li {
+    font-size: .9375rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.43;
+    margin: 0 2.625rem 0 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.header-bottom ul li a {
+    padding: 0 0 .375rem 0;
+    color: #5f6368;
+    display: inline-block;
+}
+
+.header-bottom ul li.active:last-child {
+    border-bottom: 3px solid #3367d6;
+}
+
+.header-bottom ul li.active:last-child a {
+    color: #3367d6;
+}
+
+/*------------
+    MAIN
+------------*/
 h2 {
     color: #3c4043;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.5rem;
     line-height: 2rem;
     margin: 0;
@@ -52,8 +136,8 @@ ol>li>ol {
 h3 {
     color: #3c4043;
     font-weight: 500;
-    font-size: 18px;
-    line-height: 26px;
+    font-size: 1.125rem;
+    line-height: 1.625rem;
     margin: 0;
-    padding: 52px 0 0 0;
+    padding: 3.25rem 0 0 0;
 }

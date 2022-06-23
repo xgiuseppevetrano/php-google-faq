@@ -1,6 +1,6 @@
 <!-- MILESTONE 1. Stampare in html le domande e le risposte -->
 <!-- MILESTONE 2. Dare lo stile alle domande e risposte -->
-<!-- MILESTONE 3. Aggiungere header e footer -->
+<!-- MILESTONE 3. Aggiungere header -->
 
 <?php 
     $faqs = [
@@ -25,6 +25,14 @@
             "answer" => "<p>In alcuni casi sì. Quando fai clic su un risultato della Ricerca Google, il tuo browser web potrebbe reindirizzare alla pagina web di destinazione anche l'indirizzo Internet, o URL, della pagina dei risultati di ricerca sotto forma di <a href='#'>URL referrer</a>. Talvolta, l'URL della pagina dei risultati di ricerca potrebbe contenere la query di ricerca che hai inserito. Se utilizzi la ricerca SSL (la funzione di ricerca criptata di Google), nella maggior parte dei casi i termini di ricerca non vengono inviati come parte dell'URL negli URL referrer. Questo comportamento può fare eccezione, ad esempio se utilizzi alcuni browser meno diffusi. Ulteriori informazioni sulla ricerca SSL sono disponibili <a href='#'>qui</a>. Le query di ricerca o le informazioni contenute nell'URL referrer potrebbero essere disponibili mediante Google Analytics o un'API (Application Programming Interface). Inoltre, gli inserzionisti potrebbero ricevere informazioni relative all' esatte parole chiave che hanno determinato il clic su un annuncio.</p>"
         ],
     ];
+
+    $links = [
+        "Introduzione",
+        "Norme sulla privacy",
+        "Termini di servizio",
+        "Tecnologie",
+        "Domande frequenti",
+    ]
 ?>
 
 <!DOCTYPE html>
@@ -34,12 +42,37 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Google Faq</title>
+        <!-- stylesheet -->
         <link rel="stylesheet" href="style.css">
+        <!-- google font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
+        <header>
+            <div class="header-top">
+                <div class="header-top__left">
+                    <img class="header__logo" src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="logo google">
+                    <span class="header__privacy">Privacy e Termini</span>
+                </div>
+                <div class="header-top__right">
+                    <span class="header__icon"><i class="fa-solid fa-grip-vertical"></i></span>
+                    <img class="header__user" src="https://lh3.googleusercontent.com/ogw/ADea4I7fbcUhrnW5_b_o1zcyr9Fnasm-hYF9RdUA6oIFBQ=s32-c-mo" alt="user img">
+                </div>
+            </div>
+            <div class="header-bottom">
+                <nav>
+                    <ul>
+                        <?php foreach ($links as $link) { ?>
+                            <li class="active"><a href="#"><?= $link ?></a></li>
+                        <?php } ?>
+                    </ul>
+                </nav>
+            </div>
+        </header>
         <main>
             <div class="container">
                 <?php foreach ($faqs as $faq) { ?>
