@@ -1,3 +1,7 @@
+<!-- MILESTONE 1. Stampare in html le domande e le risposte -->
+<!-- MILESTONE 2. Dare lo stile alle domande e risposte -->
+<!-- MILESTONE 3. Aggiungere header e footer -->
+
 <?php 
     $faqs = [
         [
@@ -33,6 +37,15 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        
+        <main>
+            <div class="container">
+                <?php foreach ($faqs as $faq) { ?>
+                    <section>
+                        <?= $faq["question"] ?>
+                        <?= $faq["answer"] ?>
+                    </section>
+                <?php } ?>
+            </div>
+        </main>
     </body>
 </html>
